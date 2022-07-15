@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		53D9275147BA8711C5C8D889 /* Pods_ZLDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D3A235B5A126564C2F0F504 /* Pods_ZLDemo.framework */; };
 		E6AF78232879BC330099A7FA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E6AF78222879BC330099A7FA /* AppDelegate.m */; };
 		E6AF78262879BC330099A7FA /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E6AF78252879BC330099A7FA /* SceneDelegate.m */; };
 		E6AF78292879BC330099A7FA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6AF78282879BC330099A7FA /* ViewController.m */; };
@@ -17,6 +18,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		00B3620CB2E891EF6CDF7F90 /* Pods-ZLDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZLDemo.release.xcconfig"; path = "Target Support Files/Pods-ZLDemo/Pods-ZLDemo.release.xcconfig"; sourceTree = "<group>"; };
+		6B06343198628C2B878CAF5E /* Pods-ZLDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZLDemo.debug.xcconfig"; path = "Target Support Files/Pods-ZLDemo/Pods-ZLDemo.debug.xcconfig"; sourceTree = "<group>"; };
+		7D3A235B5A126564C2F0F504 /* Pods_ZLDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZLDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6AF781E2879BC330099A7FA /* ZLDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZLDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6AF78212879BC330099A7FA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E6AF78222879BC330099A7FA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -36,17 +40,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				53D9275147BA8711C5C8D889 /* Pods_ZLDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2D6B7C6A6A6202D785D9B09E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6B06343198628C2B878CAF5E /* Pods-ZLDemo.debug.xcconfig */,
+				00B3620CB2E891EF6CDF7F90 /* Pods-ZLDemo.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		E6AF78152879BC330099A7FA = {
 			isa = PBXGroup;
 			children = (
 				E6AF78202879BC330099A7FA /* ZLDemo */,
 				E6AF781F2879BC330099A7FA /* Products */,
+				2D6B7C6A6A6202D785D9B09E /* Pods */,
+				F4C45CB659079BF5AAC609DC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -76,6 +93,14 @@
 			path = ZLDemo;
 			sourceTree = "<group>";
 		};
+		F4C45CB659079BF5AAC609DC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7D3A235B5A126564C2F0F504 /* Pods_ZLDemo.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -83,9 +108,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E6AF78372879BC350099A7FA /* Build configuration list for PBXNativeTarget "ZLDemo" */;
 			buildPhases = (
+				06C589F65988FC8D1E07914A /* [CP] Check Pods Manifest.lock */,
 				E6AF781A2879BC330099A7FA /* Sources */,
 				E6AF781B2879BC330099A7FA /* Frameworks */,
 				E6AF781C2879BC330099A7FA /* Resources */,
+				BCA08F48F501D102EF88462E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -140,6 +167,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		06C589F65988FC8D1E07914A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ZLDemo-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BCA08F48F501D102EF88462E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ZLDemo/Pods-ZLDemo-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ZLDemo/Pods-ZLDemo-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ZLDemo/Pods-ZLDemo-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		E6AF781A2879BC330099A7FA /* Sources */ = {
@@ -289,6 +358,7 @@
 		};
 		E6AF78382879BC350099A7FA /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6B06343198628C2B878CAF5E /* Pods-ZLDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -317,6 +387,7 @@
 		};
 		E6AF78392879BC350099A7FA /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 00B3620CB2E891EF6CDF7F90 /* Pods-ZLDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

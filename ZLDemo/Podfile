@@ -7,5 +7,6 @@ target 'ZLDemo' do
 
   # Pods for ZLDemo
 pod 'SDWebImage'
+pod 'AFNetworking'
 
 end

@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		53D9275147BA8711C5C8D889 /* Pods_ZLDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D3A235B5A126564C2F0F504 /* Pods_ZLDemo.framework */; };
+		E649DCEB2882E6EF00E28FF1 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E649DCEA2882E6EF00E28FF1 /* HomeViewController.m */; };
+		E649DCEE2882EA0200E28FF1 /* SessionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E649DCED2882EA0200E28FF1 /* SessionViewController.m */; };
+		E649DCF02882F0B100E28FF1 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E649DCEF2882F0B100E28FF1 /* AVFoundation.framework */; };
+		E649DCF32882F5EF00E28FF1 /* PlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E649DCF22882F5EF00E28FF1 /* PlayerViewController.m */; };
 		E6AF78232879BC330099A7FA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E6AF78222879BC330099A7FA /* AppDelegate.m */; };
 		E6AF78262879BC330099A7FA /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E6AF78252879BC330099A7FA /* SceneDelegate.m */; };
 		E6AF78292879BC330099A7FA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6AF78282879BC330099A7FA /* ViewController.m */; };
@@ -21,6 +25,13 @@
 		00B3620CB2E891EF6CDF7F90 /* Pods-ZLDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZLDemo.release.xcconfig"; path = "Target Support Files/Pods-ZLDemo/Pods-ZLDemo.release.xcconfig"; sourceTree = "<group>"; };
 		6B06343198628C2B878CAF5E /* Pods-ZLDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZLDemo.debug.xcconfig"; path = "Target Support Files/Pods-ZLDemo/Pods-ZLDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		7D3A235B5A126564C2F0F504 /* Pods_ZLDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZLDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E649DCE92882E6EF00E28FF1 /* HomeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		E649DCEA2882E6EF00E28FF1 /* HomeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		E649DCEC2882EA0200E28FF1 /* SessionViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SessionViewController.h; sourceTree = "<group>"; };
+		E649DCED2882EA0200E28FF1 /* SessionViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SessionViewController.m; sourceTree = "<group>"; };
+		E649DCEF2882F0B100E28FF1 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		E649DCF12882F5EF00E28FF1 /* PlayerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlayerViewController.h; sourceTree = "<group>"; };
+		E649DCF22882F5EF00E28FF1 /* PlayerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlayerViewController.m; sourceTree = "<group>"; };
 		E6AF781E2879BC330099A7FA /* ZLDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZLDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6AF78212879BC330099A7FA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E6AF78222879BC330099A7FA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -40,6 +51,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E649DCF02882F0B100E28FF1 /* AVFoundation.framework in Frameworks */,
 				53D9275147BA8711C5C8D889 /* Pods_ZLDemo.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -53,7 +65,6 @@
 				6B06343198628C2B878CAF5E /* Pods-ZLDemo.debug.xcconfig */,
 				00B3620CB2E891EF6CDF7F90 /* Pods-ZLDemo.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -89,6 +100,12 @@
 				E6AF782F2879BC350099A7FA /* LaunchScreen.storyboard */,
 				E6AF78322879BC350099A7FA /* Info.plist */,
 				E6AF78332879BC350099A7FA /* main.m */,
+				E649DCE92882E6EF00E28FF1 /* HomeViewController.h */,
+				E649DCEA2882E6EF00E28FF1 /* HomeViewController.m */,
+				E649DCEC2882EA0200E28FF1 /* SessionViewController.h */,
+				E649DCED2882EA0200E28FF1 /* SessionViewController.m */,
+				E649DCF12882F5EF00E28FF1 /* PlayerViewController.h */,
+				E649DCF22882F5EF00E28FF1 /* PlayerViewController.m */,
 			);
 			path = ZLDemo;
 			sourceTree = "<group>";
@@ -96,6 +113,7 @@
 		F4C45CB659079BF5AAC609DC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E649DCEF2882F0B100E28FF1 /* AVFoundation.framework */,
 				7D3A235B5A126564C2F0F504 /* Pods_ZLDemo.framework */,
 			);
 			name = Frameworks;
@@ -215,10 +233,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E649DCF32882F5EF00E28FF1 /* PlayerViewController.m in Sources */,
 				E6AF78292879BC330099A7FA /* ViewController.m in Sources */,
 				E6AF78232879BC330099A7FA /* AppDelegate.m in Sources */,
 				E6AF78342879BC350099A7FA /* main.m in Sources */,
+				E649DCEB2882E6EF00E28FF1 /* HomeViewController.m in Sources */,
 				E6AF78262879BC330099A7FA /* SceneDelegate.m in Sources */,
+				E649DCEE2882EA0200E28FF1 /* SessionViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

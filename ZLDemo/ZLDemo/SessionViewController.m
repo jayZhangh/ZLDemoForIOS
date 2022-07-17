@@ -24,15 +24,93 @@
     
     self.title = @"NSURLSession";
     
-    AFNetworkReachabilityManager *manager = [AFNetworkReachabilityManager sharedManager];
-    [manager setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
-        NSLog(@"%ld", status);
-    }];
-    [manager startMonitoring];
+//    AFNetworkReachabilityManager *manager = [AFNetworkReachabilityManager sharedManager];
+//    [manager setReachabilityStatusChangeBlock:^(AFNetworkReachabilityStatus status) {
+//        NSLog(@"%ld", status);
+//    }];
+//    [manager startMonitoring];
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
+    [self POST:@"http://localhost:8080/ZLDemo/uploadImage" params:@{@"name1":@"张亮",@"name2":@"李四",@"userName":@"智狸"} filesData:@[UIImageJPEGRepresentation([UIImage imageNamed:@"app"], 1), UIImageJPEGRepresentation([UIImage imageNamed:@"IMG_20220603_153040"], 1)] completionBlock:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        NSLog(@"OK");
+    }];
+}
+
+
+- (void)POST:(NSString *)url params:(NSDictionary *)params filesData:(NSArray *)filesData completionBlock:(void (^)(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error))completionBlock {
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:[url stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]]]];
+    [request setHTTPMethod:@"POST"];
+    [request setValue:@"multipart/form-data;boundary=boundary" forHTTPHeaderField:@"Content-Type"];
     
+    NSMutableData *fromData = [[NSMutableData alloc] init];
+    
+    // 上传参数
+    [params enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
+        [fromData appendData:[[NSString stringWithFormat:@"--boundary\r\nContent-Disposition:form-data;name=\"%@\"\r\n\r\n%@\r\n", key, obj] dataUsingEncoding:NSUTF8StringEncoding]];
+    }];
+    
+    // 上传文件
+    for (NSData *fileData in filesData) {
+        [fromData appendData:[@"--boundary\r\nContent-Disposition:form-data;name=\"images\";filename=\"image.png\"\r\nContent-Type:application/octet-stream\r\n\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
+        [fromData appendData:fileData];
+        [fromData appendData:[@"\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
+    }
+    
+    [fromData appendData:[@"--boundary--" dataUsingEncoding:NSUTF8StringEncoding]];
+    [request setHTTPBody:fromData];
+    [[[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        if (completionBlock) {
+            completionBlock(data, response, error);
+        }
+    }] resume];
+}
+
+
+- (void)httpGetData {
+    NSString *str = @"http://localhost:8080/ZLDemo/uploadImage";
+    NSURL *url = [NSURL URLWithString:str];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
+    //设置Header参数
+    [request setValue:@"testHeader" forHTTPHeaderField:@"testHeader"];
+    
+    //设置Body值方法二，这种方法比较原始，不常用，不过可以用来上传参数和文件
+//    NSString *BOUNDARY = @"0xKhTmLbOuNdArY";
+    NSString *BOUNDARY = @"boundary";
+    [request setValue:[@"multipart/form-data; boundary=" stringByAppendingString:BOUNDARY] forHTTPHeaderField:@"Content-Type"];
+    [request setHTTPMethod:@"POST"];
+    NSMutableData *body = [NSMutableData data];
+    
+    //多参数上送
+    NSString *param1 = [NSString stringWithFormat:@"--%@\r\nContent-Disposition: form-data; name=\"%@\"\r\n\r\n%@\r\n",BOUNDARY,@"name1",@"李四",nil];
+    [body appendData:[param1 dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    NSString *param2 = [NSString stringWithFormat:@"--%@\r\nContent-Disposition: form-data; name=\"%@\"\r\n\r\n%@\r\n",BOUNDARY,@"name2",@"张三",nil];
+    [body appendData:[param2 dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    //多文件上传
+    UIImage *image1 = [UIImage imageNamed:@"IMG_20220603_153040"];
+    NSData *data1 = UIImageJPEGRepresentation(image1, 1.0);
+    NSString *file1 = [NSString stringWithFormat:@"--%@\r\nContent-Disposition: form-data; name=\"%@\";filename=\"%@\"\r\nContent-Type: application/octet-stream\r\n\r\n",BOUNDARY,@"logoFile",@"image.png",nil];
+    [body appendData:[file1 dataUsingEncoding:NSUTF8StringEncoding]];
+    [body appendData:data1];
+    [body appendData:[@"\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    UIImage *image2 = [UIImage imageNamed:@"app"];
+    NSData *data2 = UIImageJPEGRepresentation(image2, 1.0);
+    NSString *file2 = [NSString stringWithFormat:@"--%@\r\nContent-Disposition: form-data; name=\"%@\";filename=\"%@\"\r\nContent-Type: application/octet-stream\r\n\r\n",BOUNDARY,@"imageFile",@"image.png",nil];
+    [body appendData:[file2 dataUsingEncoding:NSUTF8StringEncoding]];
+    [body appendData:data2];
+    [body appendData:[@"\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    //body结束分割线
+    NSString *endString = [NSString stringWithFormat:@"--%@--",BOUNDARY];
+    [body appendData:[endString dataUsingEncoding:NSUTF8StringEncoding]];
+    [request setHTTPBody:body];
+    
+    [[[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        NSLog(@"OK");
+            }] resume];
 }
 
 - (void)setImageView {
@@ -138,7 +216,7 @@
 
 - (void)uploadMIME2 {
     // 创建url
-    NSString *urlString = @"http://localhost:8080/ZLDemo/uploadImage2";
+    NSString *urlString = @"http://localhost:8080/ZLDemo/uploadImage";
     urlString = [urlString stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLFragmentAllowedCharacterSet]];
     NSURL *url = [NSURL URLWithString:urlString];
     
@@ -147,35 +225,30 @@
     request.HTTPMethod = @"POST";
     [request setValue:@"multipart/form-data; boundary=boundary" forHTTPHeaderField:@"Content-Type"];
     
-    NSMutableString *headerStrM = [[NSMutableString alloc] init];
-    // 1.
-    [headerStrM appendString:@"--boundary\r\n"];
-    [headerStrM appendString:@"Content-Disposition: form-data; name=userfile[]; filename=file1.jpg\r\n"];
-    [headerStrM appendString:@"Content-Type: image/jpeg\r\n\r\n"];
-//    [headerStrM appendString:@"Content-Type: application/octet-stream\r\n\r\n"];
     NSMutableData *data = [NSMutableData data];
-    [data appendData:[headerStrM dataUsingEncoding:NSUTF8StringEncoding]];
-    [data appendData:UIImageJPEGRepresentation([UIImage imageNamed:@"app"], 0.3)];
     
-    // 2.
-    [headerStrM appendString:@"--boundary\r\n"];
-    [headerStrM appendString:@"Content-Disposition: form-data; name=userfile[]; filename=file2.jpg\r\n"];
-    [headerStrM appendString:@"Content-Type: image/jpeg\r\n\r\n"];
-//    [headerStrM appendString:@"Content-Type: application/octet-stream\r\n\r\n"];
-    [data appendData:[headerStrM dataUsingEncoding:NSUTF8StringEncoding]];
-    [data appendData:UIImageJPEGRepresentation([UIImage imageNamed:@"IMG_20220603_153040"], 0.3)];
+    // 1.参数上送
+    NSString *param1 = @"--boundary\r\nContent-Disposition: form-data;name=\"name1\"\r\n\r\n李四\r\n";
+    [data appendData:[param1 dataUsingEncoding:NSUTF8StringEncoding]];
     
-    // username
-    NSMutableString *headerM = [[NSMutableString alloc] init];
-    [headerM appendString:@"\r\n--boundary\r\n"];
-    [headerM appendString:@"Content-Disposition: form-data; name=username\r\n\r\n"];
-    [data appendData:[headerM dataUsingEncoding:NSUTF8StringEncoding]];
-    [data appendData:[@"张亮" dataUsingEncoding:NSUTF8StringEncoding]];
+    NSString *param2 = @"--boundary\r\nContent-Disposition:form-data;name=\"name2\"\r\n\r\n张亮\r\n";
+    [data appendData:[param2 dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    // 2.多文件上传
+    NSString *file1 = @"--boundary\r\nContent-Disposition:form-data;name=\"logoFile\";filename=\"image.png\"\r\nContent-Type:application/octet-stream\r\n\r\n";
+    [data appendData:[file1 dataUsingEncoding:NSUTF8StringEncoding]];
+    [data appendData:UIImageJPEGRepresentation([UIImage imageNamed:@"app"], 1)];
+    [data appendData:[@"\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
+    
+    NSString *file2 = @"--boundary\r\nContent-Disposition:form-data;name=\"logoFile\";filename=\"image.png\"\r\nContent-Type:application/octet-stream\r\n\r\n";
+    [data appendData:[file2 dataUsingEncoding:NSUTF8StringEncoding]];
+    [data appendData:UIImageJPEGRepresentation([UIImage imageNamed:@"IMG_20220603_153040"], 1)];
+    [data appendData:[@"\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
     
     // footer
-    [data appendData:[@"\r\n--boundary--\r\n" dataUsingEncoding:NSUTF8StringEncoding]];
+    [data appendData:[@"--boundary--" dataUsingEncoding:NSUTF8StringEncoding]];
     
-    request.HTTPBody = data;
+    [request setHTTPBody:data];
     [request setValue:[NSString stringWithFormat:@"%lu", [data length]] forHTTPHeaderField:@"Content-Length"];
     
     [[[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {

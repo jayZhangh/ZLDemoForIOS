@@ -32,11 +32,24 @@
 }
 
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
-    [self POST:@"http://localhost:8080/ZLDemo/uploadImage" params:@{@"name1":@"张亮",@"name2":@"李四",@"userName":@"智狸"} filesData:@[UIImageJPEGRepresentation([UIImage imageNamed:@"app"], 1), UIImageJPEGRepresentation([UIImage imageNamed:@"IMG_20220603_153040"], 1)] completionBlock:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
-        NSLog(@"OK");
-    }];
+//    [self POST:@"http://localhost:8080/ZLDemo/uploadImage2" params:@{@"name1":@"张三",@"name2":@"李四"} filesData:@[UIImageJPEGRepresentation([UIImage imageNamed:@"app"], 1), UIImageJPEGRepresentation([UIImage imageNamed:@"IMG_20220603_153040"], 1)] completionBlock:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+//        NSLog(@"OK");
+//    }];
+    
+    [self afnPost];
 }
 
+- (void)afnPost {
+    AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
+    manager.responseSerializer = [AFHTTPResponseSerializer serializer];
+    [manager POST:@"http://localhost:8080/ZLDemo/login" parameters:@{@"name1":@"李四",@"name2":@"张三",@"name3":@"张三waq"} headers:@{@"userName":@"aaa"} progress:^(NSProgress * _Nonnull uploadProgress) {
+            
+        } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+            
+        } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+            
+        }];
+}
 
 - (void)POST:(NSString *)url params:(NSDictionary *)params filesData:(NSArray *)filesData completionBlock:(void (^)(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error))completionBlock {
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:[url stringByAddingPercentEncodingWithAllowedCharacters:[NSCharacterSet URLQueryAllowedCharacterSet]]]];
@@ -59,6 +72,7 @@
     
     [fromData appendData:[@"--boundary--" dataUsingEncoding:NSUTF8StringEncoding]];
     [request setHTTPBody:fromData];
+    [request setValue:[NSString stringWithFormat:@"%lu", [fromData length]] forHTTPHeaderField:@"Content-Length"];
     [[[NSURLSession sharedSession] dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         if (completionBlock) {
             completionBlock(data, response, error);
@@ -132,8 +146,8 @@
 - (void)AFNUpload {
     AFHTTPSessionManager *manager = [AFHTTPSessionManager manager];
     manager.responseSerializer = [AFHTTPResponseSerializer serializer];
-    [manager POST:@"http://localhost:8080/ZLDemo/uploadImage2" parameters:@{@"userName":@"李四"} headers:nil constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
-        [formData appendPartWithFileData:UIImageJPEGRepresentation([UIImage imageNamed:@"app"], 0.3) name:@"file" fileName:@"fileName.png" mimeType:@"image/jpeg"];
+    [manager POST:@"http://localhost:8080/ZLDemo/uploadImage2" parameters:@{@"name1":@"李四",@"name2":@"张三"} headers:@{@"userName":@"张三李四王五aaa"} constructingBodyWithBlock:^(id<AFMultipartFormData>  _Nonnull formData) {
+        [formData appendPartWithFileData:UIImageJPEGRepresentation([UIImage imageNamed:@"IMG_20220603_153040"], 1) name:@"file" fileName:@"fileName.png" mimeType:@"image/jpeg"];
     } progress:^(NSProgress * _Nonnull uploadProgress) {
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {

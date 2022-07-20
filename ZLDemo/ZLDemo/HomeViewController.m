@@ -12,6 +12,7 @@
 #define kViewController @"ViewConotroller"
 #define kNSURLSession @"NSURLSession"
 #define kAVPlayer @"AVPlayer"
+#define kLogin @"Login"
 
 @interface HomeViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -25,7 +26,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.homeArr = @[kViewController, kNSURLSession, kAVPlayer];
+    self.homeArr = @[kViewController, kNSURLSession, kAVPlayer, kLogin];
 }
 
 #pragma mark - UITableViewDataSource
@@ -57,6 +58,8 @@
         vcIdentifier = @"SessionIdentifier";
     } else if ([cellTitle isEqualToString:kAVPlayer]) {
         vcIdentifier = @"PlayerIdentifier";
+    } else if ([cellTitle isEqualToString:kLogin]) {
+        vcIdentifier = @"LoginIdentifier";
     }
     
     if ([vcIdentifier length] > 0) {

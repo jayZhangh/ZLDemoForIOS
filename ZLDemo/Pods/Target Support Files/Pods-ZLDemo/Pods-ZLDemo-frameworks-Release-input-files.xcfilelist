@@ -1,3 +1,4 @@
 ${PODS_ROOT}/Target Support Files/Pods-ZLDemo/Pods-ZLDemo-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework
+${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework
 ${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework

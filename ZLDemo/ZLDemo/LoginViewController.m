@@ -14,6 +14,7 @@
 @property (weak, nonatomic) IBOutlet UITextField *pwdTxf;
 - (IBAction)loginAction:(id)sender;
 - (IBAction)registerAction:(id)sender;
+- (IBAction)enterHomeAction:(id)sender;
 
 @end
 
@@ -23,6 +24,10 @@
     [super viewDidLoad];
     
     self.title = @"Login";
+}
+
+- (IBAction)enterHomeAction:(id)sender {
+    [self.navigationController pushViewController:[[UIStoryboard storyboardWithName:@"Main" bundle:nil] instantiateViewControllerWithIdentifier:@"UserListIdentifier"] animated:YES];
 }
 
 - (IBAction)registerAction:(id)sender {

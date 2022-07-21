@@ -286,7 +286,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N5T-WH-NYc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-20" y="1347"/>
+            <point key="canvasLocation" x="1281" y="1339"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="F91-hi-Uyf">
@@ -334,12 +334,25 @@
                                     <action selector="registerAction:" destination="UBj-rf-HQy" eventType="touchUpInside" id="Dzy-KX-sH5"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h1Q-Hy-4bM">
+                                <rect key="frame" x="20" y="298" width="335" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="fHO-S0-IIW"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="进入主页"/>
+                                <connections>
+                                    <action selector="enterHomeAction:" destination="UBj-rf-HQy" eventType="touchUpInside" id="WUx-xz-BnJ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="JET-TI-4WM"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="exo-QF-HC2" firstAttribute="top" secondItem="VJm-8M-dHC" secondAttribute="bottom" constant="20" id="07c-tZ-dBF"/>
                             <constraint firstItem="OWq-Cx-cwL" firstAttribute="leading" secondItem="JET-TI-4WM" secondAttribute="leading" constant="20" id="1b3-Ky-xcq"/>
+                            <constraint firstItem="h1Q-Hy-4bM" firstAttribute="leading" secondItem="JET-TI-4WM" secondAttribute="leading" constant="20" id="1oI-rR-PFZ"/>
+                            <constraint firstItem="h1Q-Hy-4bM" firstAttribute="top" secondItem="lFD-Ue-301" secondAttribute="bottom" constant="20" id="5Ge-0o-r46"/>
                             <constraint firstItem="JET-TI-4WM" firstAttribute="trailing" secondItem="OWq-Cx-cwL" secondAttribute="trailing" constant="20" id="F24-Un-f5b"/>
                             <constraint firstItem="VJm-8M-dHC" firstAttribute="top" secondItem="JET-TI-4WM" secondAttribute="top" constant="50" id="Jsx-U8-aFJ"/>
                             <constraint firstItem="lFD-Ue-301" firstAttribute="top" secondItem="OWq-Cx-cwL" secondAttribute="bottom" constant="20" id="L5m-jP-Lx3"/>
@@ -350,6 +363,7 @@
                             <constraint firstItem="VJm-8M-dHC" firstAttribute="leading" secondItem="JET-TI-4WM" secondAttribute="leading" constant="20" id="VVc-9t-AEB"/>
                             <constraint firstItem="lFD-Ue-301" firstAttribute="leading" secondItem="JET-TI-4WM" secondAttribute="leading" constant="20" id="Zg5-Cs-zfW"/>
                             <constraint firstItem="JET-TI-4WM" firstAttribute="trailing" secondItem="lFD-Ue-301" secondAttribute="trailing" constant="20" id="hWW-Cq-aW1"/>
+                            <constraint firstItem="JET-TI-4WM" firstAttribute="trailing" secondItem="h1Q-Hy-4bM" secondAttribute="trailing" constant="20" id="s3r-q4-3NY"/>
                         </constraints>
                     </view>
                     <connections>

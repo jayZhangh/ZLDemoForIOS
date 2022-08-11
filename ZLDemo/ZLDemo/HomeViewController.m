@@ -13,7 +13,8 @@
 #define kNSURLSession @"NSURLSession"
 #define kAVPlayer @"AVPlayer"
 #define kLogin @"Login"
-
+#define kChat @"Chat"
+#define kReceiveChat @"ReceiveChat"
 @interface HomeViewController () <UITableViewDataSource, UITableViewDelegate>
 
 @property (nonatomic, strong) NSArray *homeArr;
@@ -26,7 +27,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.homeArr = @[kViewController, kNSURLSession, kAVPlayer, kLogin];
+    self.homeArr = @[kViewController, kNSURLSession, kAVPlayer, kLogin, kChat, kReceiveChat];
 }
 
 #pragma mark - UITableViewDataSource
@@ -60,6 +61,10 @@
         vcIdentifier = @"PlayerIdentifier";
     } else if ([cellTitle isEqualToString:kLogin]) {
         vcIdentifier = @"LoginIdentifier";
+    } else if ([cellTitle isEqualToString:kChat]) {
+        vcIdentifier = @"ChatIdentifier";
+    } else if ([cellTitle isEqualToString:kReceiveChat]) {
+        vcIdentifier = @"ReceiveChatIdentifier";
     }
     
     if ([vcIdentifier length] > 0) {

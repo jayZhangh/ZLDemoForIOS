@@ -15,6 +15,8 @@
 		E692E5532886DC380020E615 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E692E5522886DC380020E615 /* LoginViewController.m */; };
 		E692E5572886DD490020E615 /* ZLSession.m in Sources */ = {isa = PBXBuildFile; fileRef = E692E5562886DD490020E615 /* ZLSession.m */; };
 		E692E55A2886E66A0020E615 /* UserListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E692E5592886E66A0020E615 /* UserListViewController.m */; };
+		E69D7188289CE3F80047A5E3 /* ChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E69D7187289CE3F80047A5E3 /* ChatViewController.m */; };
+		E6AC8DD2289CF25D00FECCA1 /* ReceiveChatViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6AC8DD1289CF25D00FECCA1 /* ReceiveChatViewController.m */; };
 		E6AF78232879BC330099A7FA /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E6AF78222879BC330099A7FA /* AppDelegate.m */; };
 		E6AF78262879BC330099A7FA /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E6AF78252879BC330099A7FA /* SceneDelegate.m */; };
 		E6AF78292879BC330099A7FA /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6AF78282879BC330099A7FA /* ViewController.m */; };
@@ -23,6 +25,8 @@
 		E6AF78312879BC350099A7FA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E6AF782F2879BC350099A7FA /* LaunchScreen.storyboard */; };
 		E6AF78342879BC350099A7FA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E6AF78332879BC350099A7FA /* main.m */; };
 		E6C517652887BBC600F02557 /* UpdateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6C517642887BBC600F02557 /* UpdateViewController.m */; };
+		E6DC35BE2892432E0003DB6C /* ZLTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6DC35BD2892432E0003DB6C /* ZLTabBarController.m */; };
+		E6DC35C1289243D60003DB6C /* MyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E6DC35C0289243D60003DB6C /* MyViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +46,10 @@
 		E692E5562886DD490020E615 /* ZLSession.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ZLSession.m; sourceTree = "<group>"; };
 		E692E5582886E66A0020E615 /* UserListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UserListViewController.h; sourceTree = "<group>"; };
 		E692E5592886E66A0020E615 /* UserListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UserListViewController.m; sourceTree = "<group>"; };
+		E69D7186289CE3F80047A5E3 /* ChatViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChatViewController.h; sourceTree = "<group>"; };
+		E69D7187289CE3F80047A5E3 /* ChatViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChatViewController.m; sourceTree = "<group>"; };
+		E6AC8DD0289CF25D00FECCA1 /* ReceiveChatViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReceiveChatViewController.h; sourceTree = "<group>"; };
+		E6AC8DD1289CF25D00FECCA1 /* ReceiveChatViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReceiveChatViewController.m; sourceTree = "<group>"; };
 		E6AF781E2879BC330099A7FA /* ZLDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZLDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E6AF78212879BC330099A7FA /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		E6AF78222879BC330099A7FA /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -56,6 +64,10 @@
 		E6AF78332879BC350099A7FA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E6C517632887BBC600F02557 /* UpdateViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = UpdateViewController.h; sourceTree = "<group>"; };
 		E6C517642887BBC600F02557 /* UpdateViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UpdateViewController.m; sourceTree = "<group>"; };
+		E6DC35BC2892432E0003DB6C /* ZLTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZLTabBarController.h; sourceTree = "<group>"; };
+		E6DC35BD2892432E0003DB6C /* ZLTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZLTabBarController.m; sourceTree = "<group>"; };
+		E6DC35BF289243D60003DB6C /* MyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyViewController.h; sourceTree = "<group>"; };
+		E6DC35C0289243D60003DB6C /* MyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -134,6 +146,14 @@
 				E692E5592886E66A0020E615 /* UserListViewController.m */,
 				E6C517632887BBC600F02557 /* UpdateViewController.h */,
 				E6C517642887BBC600F02557 /* UpdateViewController.m */,
+				E6DC35BC2892432E0003DB6C /* ZLTabBarController.h */,
+				E6DC35BD2892432E0003DB6C /* ZLTabBarController.m */,
+				E6DC35BF289243D60003DB6C /* MyViewController.h */,
+				E6DC35C0289243D60003DB6C /* MyViewController.m */,
+				E69D7186289CE3F80047A5E3 /* ChatViewController.h */,
+				E69D7187289CE3F80047A5E3 /* ChatViewController.m */,
+				E6AC8DD0289CF25D00FECCA1 /* ReceiveChatViewController.h */,
+				E6AC8DD1289CF25D00FECCA1 /* ReceiveChatViewController.m */,
 			);
 			path = ZLDemo;
 			sourceTree = "<group>";
@@ -266,12 +286,16 @@
 				E649DCF32882F5EF00E28FF1 /* PlayerViewController.m in Sources */,
 				E6AF78292879BC330099A7FA /* ViewController.m in Sources */,
 				E6C517652887BBC600F02557 /* UpdateViewController.m in Sources */,
+				E6DC35BE2892432E0003DB6C /* ZLTabBarController.m in Sources */,
 				E6AF78232879BC330099A7FA /* AppDelegate.m in Sources */,
 				E6AF78342879BC350099A7FA /* main.m in Sources */,
 				E692E5572886DD490020E615 /* ZLSession.m in Sources */,
 				E649DCEB2882E6EF00E28FF1 /* HomeViewController.m in Sources */,
 				E6AF78262879BC330099A7FA /* SceneDelegate.m in Sources */,
+				E6AC8DD2289CF25D00FECCA1 /* ReceiveChatViewController.m in Sources */,
 				E649DCEE2882EA0200E28FF1 /* SessionViewController.m in Sources */,
+				E69D7188289CE3F80047A5E3 /* ChatViewController.m in Sources */,
+				E6DC35C1289243D60003DB6C /* MyViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -422,7 +446,6 @@
 				INFOPLIST_FILE = ZLDemo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;
@@ -451,7 +474,6 @@
 				INFOPLIST_FILE = ZLDemo/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.2;

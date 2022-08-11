@@ -6,8 +6,12 @@ target 'ZLDemo' do
   use_frameworks!
 
   # Pods for ZLDemo
+
+pod 'ZLConstraint'
 pod 'SDWebImage'
 pod 'AFNetworking'
 pod 'MBProgressHUD'
+pod 'MJRefresh'
+pod 'HyphenateChat'
 
 end

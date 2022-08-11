@@ -10,6 +10,7 @@
 #import "ZLSession.h"
 #import "SDWebImage.h"
 #import "MBProgressHUD.h"
+#import "MJRefresh.h"
 
 @interface UserListViewController () <UITableViewDataSource, UITableViewDelegate>
 
@@ -27,10 +28,13 @@
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadAction) name:@"ReloadUserListNotification" object:nil];
     
     [self reloadAction];
+    
+    self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingTarget:self refreshingAction:@selector(reloadAction)];
 }
 
 - (void)reloadAction {
     [ZLSession POST:@"http://localhost:8080/ZLDemo/userList" params:nil headers:nil completionBlock:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        [self.tableView.mj_header endRefreshing];
         self.userArr = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableLeaves error:nil];
 //        NSLog(@"%@", self.userArr);
         dispatch_async(dispatch_get_main_queue(), ^{

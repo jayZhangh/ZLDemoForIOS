@@ -6,6 +6,8 @@
 //
 
 #import "AppDelegate.h"
+#import <HyphenateChat/EMOptions.h>
+#import <HyphenateChat/EMClient.h>
 
 @interface AppDelegate ()
 
@@ -16,6 +18,11 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    EMOptions *options = [EMOptions optionsWithAppkey:@"1172180128115081#baiduclient"];
+    options.apnsCertName = nil;
+    [[EMClient sharedClient] initializeSDKWithOptions:options];
+    
     return YES;
 }
 

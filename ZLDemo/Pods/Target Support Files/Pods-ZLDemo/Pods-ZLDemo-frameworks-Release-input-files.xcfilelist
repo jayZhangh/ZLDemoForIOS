@@ -1,4 +1,7 @@
 ${PODS_ROOT}/Target Support Files/Pods-ZLDemo/Pods-ZLDemo-frameworks.sh
 ${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework
+${PODS_ROOT}/HyphenateChat/HyphenateChat.framework
 ${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework
+${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework
 ${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework
+${BUILT_PRODUCTS_DIR}/ZLConstraint/ZLConstraint.framework

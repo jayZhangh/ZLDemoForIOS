@@ -43,6 +43,21 @@
             </objects>
             <point key="canvasLocation" x="-20" y="33"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="qO1-Bc-Kgw">
+            <objects>
+                <viewController storyboardIdentifier="MyIdentifier" id="Bd0-KM-3yv" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="LsG-V1-E7x">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="qQD-GY-xc6"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XoT-RH-W7h" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-687" y="686"/>
+        </scene>
         <!--Session View Controller-->
         <scene sceneID="qLq-6E-ZKX">
             <objects>
@@ -74,6 +89,129 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qaA-2w-Law" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-20" y="686"/>
+        </scene>
+        <!--Chat View Controller-->
+        <scene sceneID="gaF-Bv-jcS">
+            <objects>
+                <viewController storyboardIdentifier="ChatIdentifier" id="YDr-Bx-lpF" customClass="ChatViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="HSF-uy-3ue">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T7b-54-uGf">
+                                <rect key="frame" x="10" y="10" width="355" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="ba2-Us-tir"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="发送消息"/>
+                                <connections>
+                                    <action selector="sendAction:" destination="YDr-Bx-lpF" eventType="touchUpInside" id="2mU-px-O3g"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cyp-wi-Mei">
+                                <rect key="frame" x="10" y="64" width="355" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="xfg-L6-vi8"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="创建账号"/>
+                                <connections>
+                                    <action selector="createAction:" destination="YDr-Bx-lpF" eventType="touchUpInside" id="a4k-lM-ETK"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yyZ-Nx-EIN">
+                                <rect key="frame" x="10" y="118" width="355" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="ZkA-0w-RbO"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="登录账号"/>
+                                <connections>
+                                    <action selector="loginAction:" destination="YDr-Bx-lpF" eventType="touchUpInside" id="mlI-9o-U3s"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tZv-ia-oLJ">
+                                <rect key="frame" x="10" y="172" width="355" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="uUX-C0-C9f"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="接收消息"/>
+                                <connections>
+                                    <action selector="receiveAction:" destination="YDr-Bx-lpF" eventType="touchUpInside" id="XCZ-By-hne"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Hpy-UB-t1o"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="T7b-54-uGf" firstAttribute="top" secondItem="Hpy-UB-t1o" secondAttribute="top" constant="10" id="36T-SO-2tg"/>
+                            <constraint firstItem="Hpy-UB-t1o" firstAttribute="trailing" secondItem="tZv-ia-oLJ" secondAttribute="trailing" constant="10" id="5sF-KF-dbd"/>
+                            <constraint firstItem="Hpy-UB-t1o" firstAttribute="trailing" secondItem="cyp-wi-Mei" secondAttribute="trailing" constant="10" id="631-xi-T4U"/>
+                            <constraint firstItem="yyZ-Nx-EIN" firstAttribute="leading" secondItem="Hpy-UB-t1o" secondAttribute="leading" constant="10" id="F6P-Ri-j8H"/>
+                            <constraint firstItem="tZv-ia-oLJ" firstAttribute="top" secondItem="yyZ-Nx-EIN" secondAttribute="bottom" constant="10" id="N1V-Hf-gyF"/>
+                            <constraint firstItem="Hpy-UB-t1o" firstAttribute="trailing" secondItem="yyZ-Nx-EIN" secondAttribute="trailing" constant="10" id="OHb-tc-yzX"/>
+                            <constraint firstItem="T7b-54-uGf" firstAttribute="leading" secondItem="Hpy-UB-t1o" secondAttribute="leading" constant="10" id="ehK-5a-map"/>
+                            <constraint firstItem="Hpy-UB-t1o" firstAttribute="trailing" secondItem="T7b-54-uGf" secondAttribute="trailing" constant="10" id="f6Z-kM-eOw"/>
+                            <constraint firstItem="cyp-wi-Mei" firstAttribute="top" secondItem="T7b-54-uGf" secondAttribute="bottom" constant="10" id="lTX-4l-CrR"/>
+                            <constraint firstItem="cyp-wi-Mei" firstAttribute="leading" secondItem="Hpy-UB-t1o" secondAttribute="leading" constant="10" id="mDH-9a-oup"/>
+                            <constraint firstItem="yyZ-Nx-EIN" firstAttribute="top" secondItem="cyp-wi-Mei" secondAttribute="bottom" constant="10" id="uP5-uK-usW"/>
+                            <constraint firstItem="tZv-ia-oLJ" firstAttribute="leading" secondItem="Hpy-UB-t1o" secondAttribute="leading" constant="10" id="yYg-xx-24A"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YNx-x3-7yO" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-687.20000000000005" y="1338.9805097451276"/>
+        </scene>
+        <!--Receive Chat View Controller-->
+        <scene sceneID="6um-4h-ou5">
+            <objects>
+                <viewController storyboardIdentifier="ReceiveChatIdentifier" id="9fb-mI-vCZ" customClass="ReceiveChatViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1YL-nR-wb2">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3LQ-JF-dPD">
+                                <rect key="frame" x="10" y="10" width="355" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="Pxb-48-Un7"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="接收消息"/>
+                                <connections>
+                                    <action selector="receiveAction:" destination="9fb-mI-vCZ" eventType="touchUpInside" id="S1r-7V-Zxd"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dts-rq-ESN">
+                                <rect key="frame" x="10" y="64" width="355" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="Bup-Uj-gFw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="fqs-8y-2Vm"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="dts-rq-ESN" firstAttribute="top" secondItem="3LQ-JF-dPD" secondAttribute="bottom" constant="10" id="UOp-D6-xO4"/>
+                            <constraint firstItem="3LQ-JF-dPD" firstAttribute="top" secondItem="fqs-8y-2Vm" secondAttribute="top" constant="10" id="cbi-PX-Udw"/>
+                            <constraint firstItem="3LQ-JF-dPD" firstAttribute="leading" secondItem="fqs-8y-2Vm" secondAttribute="leading" constant="10" id="phv-am-nZg"/>
+                            <constraint firstItem="fqs-8y-2Vm" firstAttribute="trailing" secondItem="dts-rq-ESN" secondAttribute="trailing" constant="10" id="r3P-PW-KY6"/>
+                            <constraint firstItem="dts-rq-ESN" firstAttribute="leading" secondItem="fqs-8y-2Vm" secondAttribute="leading" constant="10" id="rh2-3g-YJD"/>
+                            <constraint firstItem="fqs-8y-2Vm" firstAttribute="trailing" secondItem="3LQ-JF-dPD" secondAttribute="trailing" constant="10" id="wgi-Lh-m9g"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="label" destination="dts-rq-ESN" id="Bhv-yZ-Ki4"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oB5-Tk-Eyz" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-20" y="1339"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">

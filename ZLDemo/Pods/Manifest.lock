@@ -14,27 +14,39 @@ PODS:
   - AFNetworking/Serialization (4.0.1)
   - AFNetworking/UIKit (4.0.1):
     - AFNetworking/NSURLSession
+  - HyphenateChat (3.8.6.3)
   - MBProgressHUD (1.2.0)
+  - MJRefresh (3.7.5)
   - SDWebImage (5.13.0):
     - SDWebImage/Core (= 5.13.0)
   - SDWebImage/Core (5.13.0)
+  - ZLConstraint (0.0.4)
 
 DEPENDENCIES:
   - AFNetworking
+  - HyphenateChat
   - MBProgressHUD
+  - MJRefresh
   - SDWebImage
+  - ZLConstraint
 
 SPEC REPOS:
   trunk:
     - AFNetworking
+    - HyphenateChat
     - MBProgressHUD
+    - MJRefresh
     - SDWebImage
+    - ZLConstraint
 
 SPEC CHECKSUMS:
   AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
+  HyphenateChat: 9bf9c696f8c9a792e6827363850562e3d3f23f03
   MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
+  MJRefresh: fdf5e979eb406a0341468932d1dfc8b7f9fce961
   SDWebImage: 0327043dbb9533e75f2eff8445b3df0f2ceca6ac
+  ZLConstraint: 9a84fa7f943a061310f3ebb0c85915444f6833ec
 
-PODFILE CHECKSUM: 8f9dfde13454c7e04b16cb4f815c95619d72dffe
+PODFILE CHECKSUM: 10f22309751deadadd2d42cfe43af4e515bc93ca
 
 COCOAPODS: 1.11.3

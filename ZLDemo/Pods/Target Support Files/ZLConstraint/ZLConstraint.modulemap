@@ -1,0 +1,6 @@
+framework module ZLConstraint {
+  umbrella header "ZLConstraint-umbrella.h"
+
+  export *
+  module * { export * }
+}
